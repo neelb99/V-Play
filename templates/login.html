@@ -4,11 +4,12 @@
 	<title>Login</title>
 </head>
 <body>
-	<form>
+	<form action = "{{ url_for('admin') }}" method = "post">
 		<label for="username">Username: </label>
 		<input name="username" type="text">
 		<label for="password">Password: </label>
 		<input type="password" name="password">
+		<button type="submit">SUBMIT</button>
 	</form>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HELLO ADMIN</title>
+</head>
+<body>
+	{% if check %}
+	<h1>SET STATUS</h1>
+	<form action = "{{ url_for('update') }}" method = "post">
+		<label for="tt">Username: </label>
+		<select name="tt">
+  		<option value="full">Full</option>
+  		<option value="not">Not full</option>
+		</select>
+		<label for="ps4">Password: </label>
+		<select name="ps4">
+  		<option value="full">Full</option>
+  		<option value="not">Not full</option>
+		</select>
+		<button type="submit">SUBMIT</button>
+	</form>
+	{% else %}
+	<h1>WRONG</h1>
+	{% endif %}
+</body>
+</html>
