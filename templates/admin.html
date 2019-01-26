@@ -6,16 +6,16 @@
 <body>
 	{% if check %}
 	<h1>SET STATUS</h1>
-	<form action = "{{ url_for('update') }}" method = "post">
-		<label for="tt">Username: </label>
+	<form action = "{{ url_for('index') }}" method = "post">
+		<label for="tt">Table Tennis: </label>
 		<select name="tt">
-  		<option value="full">Full</option>
-  		<option value="not">Not full</option>
+  		<option value="Full">Full</option>
+  		<option value="Available">Not full</option>
 		</select>
-		<label for="ps4">Password: </label>
+		<label for="ps4">PS4: </label>
 		<select name="ps4">
-  		<option value="full">Full</option>
-  		<option value="not">Not full</option>
+  		<option value="Full">Full</option>
+  		<option value="Available">Not full</option>
 		</select>
 		<button type="submit">SUBMIT</button>
 	</form>
