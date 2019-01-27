@@ -7,7 +7,8 @@ import psycopg2
 
 app = Flask(__name__)
 
-engine = create_engine("postgresql://postgres:1677@localhost/vplay")
+# engine = create_engine("postgresql://postgres:1677@localhost/vplay")
+engine = create_engine("DATABASE_URL")
 db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/",methods = ["POST", "GET"])
