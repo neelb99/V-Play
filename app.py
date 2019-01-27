@@ -65,7 +65,7 @@ def admin():
 	else:
 		username = request.form.get("username")
 		password = request.form.get("password")
-		check = username=="admin" and password=="admin"
+		check = (username=="admin" or username=="admin ") and password=="admin"
 		if check:
 			activities = {}
 			abc = db.execute("SELECT activity, status FROM vplay").fetchall()
