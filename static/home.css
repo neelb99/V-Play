@@ -103,3 +103,13 @@ body,html{
   margin-top: 15px;
   margin-bottom: 15px;
  }
+
+@media (min-width: 576px){
+.card-deck .card{
+	margin-bottom:20px !important;
+}
+}
+
+.card-deck .card{
+	margin-bottom:20px !important;
+}
