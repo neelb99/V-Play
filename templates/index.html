@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="">
+	<link rel="shortcut icon" type="image/x-icon" href="http://vit.edu.in/wp-content/uploads/2018/09/VIT-favicon.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
 	<title>V-Play</title>
@@ -24,11 +24,11 @@
 		<div id="status" class="bg-dark">
 			<h1 class="text-center">ACTIVITIES</h1>
 			<br>
-			<div class="card-deck homecards">
+			<div class="card-deck">
 			{% if ttval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/73/73051.svg" alt="About Us Icon">
       		<div class="card-body text-center">
@@ -37,9 +37,9 @@
   			</div>
 			</div>
 			{% if psval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/65/65222.svg" alt="About Us Icon">
       <div class="card-body text-center">
@@ -49,9 +49,9 @@
 			</div>
 
 			{% if carromval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/103/103255.svg" alt="About Us Icon">
       <div class="card-body text-center">
@@ -60,11 +60,11 @@
   			</div>
 			</div>
 </div>
-		<div class="card-deck homecards">
+		<div class="card-deck">
 			{% if chessval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/1384/1384313.svg" alt="About Us Icon">
       <div class="card-body text-center">
@@ -77,9 +77,9 @@
 			
 
 			{% if PCval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/11/11296.svg" alt="About Us Icon">
       <div class="card-body text-center">
@@ -89,9 +89,9 @@
 			</div>
 
 			{% if poolval == "Available"%}
-			<div class="card bg-success" >
+			<div class="card activitycard bg-success" >
 			{% else%}
-			<div class="card bg-danger" >
+			<div class="card activitycard bg-danger" >
 			{% endif%}
   			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/39/39733.svg" alt="About Us Icon">
       <div class="card-body text-center">
