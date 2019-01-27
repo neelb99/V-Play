@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="home.css">
 	<title>V-Play</title>
 </head>
 <body>
-	<h1>STATUS:</h1>
-	<ul>
-		<li>Table tennis: {{ttval}}</li>
-		<li>PS4: {{psval}}</li> 
-	</ul>
+	<div id="container-fluid">
+		<div id="top">
+			<a href={{url_for(/login)}}>Login</a>
+		</div>
+		<div id="welcome">
+			<h1>Welcome to V-Play</h1>
+			<p>V-Play is a portal designed to give you updates regarding the status of the various activities in S block. Using this portal you can check whether the various activities are full or if there are vacancies available.</p>
+			<button><a href="#status">Check Status</a></button>
+		</div>
+		<div id="status">
+			<h1>ACTIVITIES</h1>
+			{% if ttval is equal to "Available"%}
+			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			{% else}
+			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			{% endif}
+  			<div class="card-header">Table Tennis</div>
+  			<div class="card-body">
+    			<h5 class="card-title">TT card title</h5>
+    			<p class="card-text">{{ttval}}</p>
+  			</div>
+			</div>
+			{% if psval is equal to "Available"%}
+			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			{% else}
+			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			{% endif}
+  			<div class="card-header">PS4</div>
+  			<div class="card-body">
+    			<h5 class="card-title">PS card title</h5>
+    			<p class="card-text">{{psval}}</p>
+  			</div>
+			</div>
+			
+		</div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,98 @@
+body,html{
+	margin:0;
+	padding: 0;
+	width: 100vw;
+	max-width: 100%;
+}
+
+.container-fluid{
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	height: 100%;
+}
+
+.pagename{
+  padding-top:60px;
+  padding-bottom: 20px;
+  color:white;
+}
+
+#loginform{
+	width: 100vw;
+	height: 100vh;
+	margin:auto;
+}
+
+#status{
+	width:100vw;
+	max-width: 100%;
+	height: auto;
+	color: white;
+}
+
+.card-title{
+	color: black;
+}
+
+#welcome{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width:100vw;
+	max-width: 100%;
+	min-height: 100vh;
+	height: auto;
+	color:white;
+}
+
+.card-img-top{
+  
+  margin: auto;
+  margin-top:10px;
+  width:50%;
+}
+
+#stuff{
+	margin:auto;
+	font-size: 24px;
+	color: white;
+}
+
+.btn-warning a{
+	color: black;
+}
+
+.btn-warning a:hover{
+	color: black;
+}
+
+
+.btn-info a{
+	color: white;
+}
+
+.btn-info a:hover{
+	color: white;
+}
+
+.btn a:hover{
+	text-decoration: none;
+}
+
+
+
+#login{
+	margin: 20px; 
+	text-align: right;
+	text-decoration: none;
+	color: white;
+}
+
+.homecards{
+  margin-top:30px;
+  padding-bottom:30px;
+  padding-top:30px;
+  margin-left:20px;
+  margin-right:20px;
+}
