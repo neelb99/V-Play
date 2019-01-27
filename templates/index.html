@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
 	<title>V-Play</title>
 </head>
 <body>
-	<div id="container-fluid">
-		<div id="top">
-			<a href={{url_for('login')}}>Login</a>
-		</div>
-		<div id="welcome">
+	<div class="container-fluid">
+		<div id="welcome" class="text-center bg-dark">
+			<div id ="login">
+			<a href={{url_for('login')}}><button class="btn btn-warning"><a href={{url_for('login')}}>Login</a></button></a>
+			</div>
+			<div id="stuff">
 			<h1>Welcome to V-Play</h1>
+			<br>
 			<p>V-Play is a portal designed to give you updates regarding the status of the various activities in S block. Using this portal you can check whether the various activities are full or if there are vacancies available.</p>
-			<button><a href="#status">Check Status</a></button>
+			<br>
+			<a href="#status"><button class="btn btn-info"><a href="#status">Check Status</a></button></a>
 		</div>
-		<div id="status">
-			<h1>ACTIVITIES</h1>
+	</div>
+		<div id="status" class="bg-dark">
+			<h1 class="text-center">ACTIVITIES</h1>
+			<br>
+			<div class="card-deck homecards">
 			{% if ttval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">Table Tennis</div>
-  			<div class="card-body">
-    			<h5 class="card-title">TT card title</h5>
-    			<p class="card-text">{{ttval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/73/73051.svg" alt="About Us Icon">
+      		<div class="card-body text-center">
+    			<h2><h5 class="card-title">Table Tennis</h5></h2>
+    			<p class="card-title">{{ttval}}</p>
   			</div>
 			</div>
 			{% if psval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">PS4</div>
-  			<div class="card-body">
-    			<h5 class="card-title">PS card title</h5>
-    			<p class="card-text">{{psval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/65/65222.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Playstation</h5>
+    			<p class="card-title">{{psval}}</p>
   			</div>
 			</div>
 
 			{% if carromval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">Carrom</div>
-  			<div class="card-body">
-    			<h5 class="card-title">Carrom card title</h5>
-    			<p class="card-text">{{carromval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/103/103255.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Carrom</h5>
+    			<p class="card-title">{{carromval}}</p>
   			</div>
 			</div>
-
+</div>
+		<div class="card-deck homecards">
 			{% if chessval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">Chess</div>
-  			<div class="card-body">
-    			<h5 class="card-title">Chess card title</h5>
-    			<p class="card-text">{{chessval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/1384/1384313.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Chess</h5>
+    			<p class="card-title">{{chessval}}</p>
   			</div>
 			</div>
-
-			{% if foosballval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-			{% endif%}
-  			<div class="card-header">FOOSBALL</div>
-  			<div class="card-body">
-    			<h5 class="card-title">foosball card title</h5>
-    			<p class="card-text">{{foosballval}}</p>
-  			</div>
-			</div>
+		
+		
+			
 
 			{% if PCval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">PC</div>
-  			<div class="card-body">
-    			<h5 class="card-title">PC card title</h5>
-    			<p class="card-text">{{PCval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/11/11296.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">PC</h5>
+    			<p class="card-title">{{PCval}}</p>
   			</div>
 			</div>
 
 			{% if poolval == "Available"%}
-			<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+			<div class="card bg-success" >
 			{% else%}
-			<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+			<div class="card bg-danger" >
 			{% endif%}
-  			<div class="card-header">POOL</div>
-  			<div class="card-body">
-    			<h5 class="card-title">POOL card title</h5>
-    			<p class="card-text">{{poolval}}</p>
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/39/39733.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Pool</h5>
+    			<p class="card-title">{{poolval}}</p>
   			</div>
 			</div>
-			
+			</div>
 		</div>
 	</div>
 </body>

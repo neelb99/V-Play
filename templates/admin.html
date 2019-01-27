@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HELLO ADMIN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
+	<title>Status</title>
 </head>
 <body>
 	{% if check %}
-	<h1>SET STATUS</h1>
+	<div class="container-fluid bg-dark">
+
+		<div class = "pagename text-center">
+    <h1>Set Status</h1>
+  </div>
+		 <div class = "offset-md-4 col-md-4">
+    
+    <div class="jumbotron">
+	
+	
 	<form action = "{{ url_for('index') }}" method = "post">
+		<div class="form-group">
 		<label for="tt">Table Tennis: </label>
-		<select name="tt">
+		<select class="form-control" name="tt">
   		<option value="Full">Full</option>
   		{% if ttval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -16,8 +29,10 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
+	</div>
+		<div class="form-group">
 		<label for="ps4">PS4: </label>
-		<select name="ps4">
+		<select class="form-control" name="ps4">
   		<option value="Full">Full</option>
   		{% if psval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -25,8 +40,10 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
+	</div>
+	<div class="form-group">
 		<label for="carrom">Carrom: </label>
-		<select name="carrom">
+		<select class="form-control" name="carrom">
   		<option value="Full">Full</option>
   		{% if carromval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -34,8 +51,10 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
+	</div>
+	<div class="form-group">
 		<label for="chess">Chess: </label>
-		<select name="chess">
+		<select class="form-control" name="chess">
   		<option value="Full">Full</option>
   		{% if chessval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -43,17 +62,10 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
-		<label for="foosball">Foosball: </label>
-		<select name="foosball">
-  		<option value="Full">Full</option>
-  		{% if foosballval=="Available"%}
-  		<option value="Available" selected="selected">Available</option>
-  		{%else%}
-  		<option value="Available">Available</option>
-  		{%endif%}
-		</select>
+	</div>
+	<div class="form-group">
 		<label for="PC">PC: </label>
-		<select name="PC">
+		<select class="form-control" name="PC">
   		<option value="Full">Full</option>
   		{% if PCval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -61,8 +73,10 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
+	</div>
+	<div class="form-group">
 		<label for="pool">Pool: </label>
-		<select name="pool">
+		<select class="form-control" name="pool">
   		<option value="Full">Full</option>
   		{% if poolval=="Available"%}
   		<option value="Available" selected="selected">Available</option>
@@ -70,10 +84,15 @@
   		<option value="Available">Available</option>
   		{%endif%}
 		</select>
-		<button type="submit">SUBMIT</button>
+	</div>
+	<center>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</center>
 	</form>
-	{% else %}
-	<h1>WRONG</h1>
 	{% endif %}
+</div>
+</div>
+</div>
+
 </body>
 </html>
