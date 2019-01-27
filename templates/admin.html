@@ -10,12 +10,65 @@
 		<label for="tt">Table Tennis: </label>
 		<select name="tt">
   		<option value="Full">Full</option>
-  		<option value="Available">Not full</option>
+  		{% if ttval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
 		</select>
 		<label for="ps4">PS4: </label>
 		<select name="ps4">
   		<option value="Full">Full</option>
-  		<option value="Available">Not full</option>
+  		{% if psval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
+		</select>
+		<label for="carrom">Carrom: </label>
+		<select name="carrom">
+  		<option value="Full">Full</option>
+  		{% if carromval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
+		</select>
+		<label for="chess">Chess: </label>
+		<select name="chess">
+  		<option value="Full">Full</option>
+  		{% if chessval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
+		</select>
+		<label for="foosball">Foosball: </label>
+		<select name="foosball">
+  		<option value="Full">Full</option>
+  		{% if foosballval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
+		</select>
+		<label for="PC">PC: </label>
+		<select name="PC">
+  		<option value="Full">Full</option>
+  		{% if PCval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
+		</select>
+		<label for="pool">Pool: </label>
+		<select name="pool">
+  		<option value="Full">Full</option>
+  		{% if poolval=="Available"%}
+  		<option value="Available" selected="selected">Available</option>
+  		{%else%}
+  		<option value="Available">Available</option>
+  		{%endif%}
 		</select>
 		<button type="submit">SUBMIT</button>
 	</form>
