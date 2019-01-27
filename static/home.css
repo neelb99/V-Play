@@ -39,7 +39,8 @@ body,html{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width:100vw;
+	margin-left:10px;
+	margin-right:10px;
 	max-width: 100%;
 	min-height: 100vh;
 	height: auto;
