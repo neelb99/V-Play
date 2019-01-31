@@ -3,6 +3,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import psycopg2
+import datetime
 
 
 app = Flask(__name__)
@@ -50,7 +51,9 @@ def index():
 		chessval = activities['chess']
 		PCval = activities['PC']
 		poolval = activities['pool']
-		return render_template('index.html', ttval=ttval, psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval)
+		x = datetime.datetime.now()
+		y = x.strftime("%d/%m/%Y at %I:%M%p")
+		return render_template('index.html', ttval=ttval, psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval, time=y)
 
 
 @app.route("/login")
