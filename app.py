@@ -25,7 +25,8 @@ def index():
 
 		PCval = activities['PC']
 		poolval = activities['pool']
-		return render_template('index.html',ttval=ttval,psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval)
+		time = activities['update']
+		return render_template('index.html',ttval=ttval,psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval, time=time)
 	else:
 		activities = {}
 		x = datetime.datetime.now()
