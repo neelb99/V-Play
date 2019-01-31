@@ -28,6 +28,8 @@ def index():
 		return render_template('index.html',ttval=ttval,psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval)
 	else:
 		activities = {}
+		x = datetime.datetime.now()
+		y = x.strftime("%d/%m/%Y at %I:%M%p")
 		abc = db.execute("SELECT activity, status FROM vplay").fetchall()
 		for xyz in abc:
 			activities[xyz.activity] = xyz.status
@@ -37,6 +39,7 @@ def index():
 		activities['chess'] = request.form.get("chess")
 		activities['PC'] = request.form.get("PC")
 		activities['pool'] = request.form.get("pool")
+		activities['update'] = y
 		def dbupdate(activity, xyzval):
 			db.execute("Update vplay set status = :status where activity = :activityname", {"status":xyzval,"activityname":activity})
 		for key,value in activities.items():
@@ -51,9 +54,8 @@ def index():
 		chessval = activities['chess']
 		PCval = activities['PC']
 		poolval = activities['pool']
-		x = datetime.datetime.now()
-		y = x.strftime("%d/%m/%Y at %I:%M%p")
-		return render_template('index.html', ttval=ttval, psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval, time=y)
+		time = activities['update']
+		return render_template('index.html', ttval=ttval, psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval, time=time)
 
 
 @app.route("/login")
