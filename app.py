@@ -3,7 +3,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import psycopg2
-import datetime
+from datetime import datetime,timedelta
 
 
 app = Flask(__name__)
@@ -29,8 +29,8 @@ def index():
 		return render_template('index.html',ttval=ttval,psval=psval, carromval=carromval, chessval=chessval,PCval=PCval,poolval=poolval, time=time)
 	else:
 		activities = {}
-		x = datetime.datetime.now()
-		y = x.strftime("%d/%m/%Y at %I:%M%p")
+		x = datetime.now() + timedelta(hours=5, minutes=30)
+		y = x.strftime("%d/%m/%Y at %I:%M %p")
 		abc = db.execute("SELECT activity, status FROM vplay").fetchall()
 		for xyz in abc:
 			activities[xyz.activity] = xyz.status
