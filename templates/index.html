@@ -24,7 +24,9 @@
 				<p>V-Play is a portal designed to give you updates regarding the status of the various activities in S block. Using this portal you can check whether the various activities are full or if there are vacancies available.</p>
 				<br>
 				<button onclick="location.href='{{url_for('status')}}'" class="btn btn-info">Check Status</button>
-			
+				{%if isadmin%}
+				<button onclick="location.href='{{url_for('new')}}'" class="btn btn-info">New Entry</button>
+				{%endif%}
 		</div>
 	</div>
 	</div>

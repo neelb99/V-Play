@@ -132,6 +132,29 @@ def logout():
 	else:
 		return redirect('/')
 
+@app.route('/new', methods={"GET","POST"})
+def new():
+	if 'admin' in session:
+		if request.method == "GET":
+			return render_template('new.html', isadmin=True)
+		else:
+			name = request.form.get("name")
+			roll = request.form.get("roll")
+			activity = request.form.get("activity")
+			timestamp = datetime.now() + timedelta(hours=5, minutes=30)
+			date = timestamp.strftime("%d")
+			month = timestamp.strftime("%m")
+			year = timestamp.strftime("%Y")
+			starttime = timestamp.strftime("%H:%M")
+			timestamp2 = timestamp = datetime.now() + timedelta(hours=6, minutes=30)
+			endtime = timestamp2.strftime("%H:%M")
+			db.execute("insert into users (name,roll,date,month,year,starttime,endtime,activity) values(:name,:roll,:date,:month,:year,:starttime,:endtime,:activity)",
+					   {"name":name, "roll": roll,"date":date, "month": month,"year":year, "starttime": starttime,"endtime":endtime, "activity": activity})
+			db.commit()
+			return redirect('/')
+	else:
+		return redirect('/')
+
 if __name__ == "__main__":
 	app.run()
 

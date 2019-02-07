@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d63d534-4b38-4e86-a468-ca6d669affd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -66,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="240">
+              <caret line="136" column="26" lean-forward="true" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -136,6 +132,11 @@
               <item name="hello" type="b2602c69:ProjectViewProjectNode" />
               <item name="hello" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -174,7 +175,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -227,7 +227,7 @@
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -254,8 +254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="240">
+          <caret line="136" column="26" lean-forward="true" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>

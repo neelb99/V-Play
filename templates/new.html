@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/letters-and-numbers-1/32/lowercase_letter_v_blue-512.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
+	<title>New Entry</title>
+</head>
+<body>
+	<div class="container-fluid bg-dark">
+		<div id ="login" class="bg-dark">
+			<button onclick="location.href='{{url_for('index')}}'" class="btn btn-warning">Home</button>
+			{%if isadmin %}
+			<button onclick="location.href='{{url_for('admin')}}'" class="btn btn-warning">Update Status</button>
+			<button onclick="location.href='{{url_for('logout')}}'" class="btn btn-warning">Sign Out</button>
+			{%endif%}
+		</div>
+		<div class = "pagename text-center">
+    <h1>Enter Details</h1>
+  </div>
+		 <div class = "offset-md-4 col-md-4">
+    
+    <div class="jumbotron">
+		
+	<form action = "{{ url_for('new') }}" method = "post" >
+		<div class = "form-group">
+			<center>
+		<label for="name">Name:&nbsp&nbsp</label>
+		<input name="name" type="text">
+</center>
+		</div>
+		
+	<div class = "form-group">
+		<center>
+		<label for="roll">Roll Number:&nbsp&nbsp</label>
+		<input type="text" name="roll">
+	</center>
+	</div>
+	<div class = "form-group">
+	<select class="form-control" name="activity">
+  		<option value="Table Tennis">Table Tennis</option>
+  		<option value="Playstation">Playstation</option>
+  		<option value="Carrom">Carrom</option>
+  		<option value="Chess">Chess</option>
+  		<option value="PC">PC</option>
+  		<option value="Pool">Pool</option>
+  		
+		</select>
+	</div>
+	<center>
+			<button type="submit" class="btn btn-primary">Submit</button>
+	</center>
+
+	</form>
+</div>
+</div>
+</div>
+</body>
+</html>
