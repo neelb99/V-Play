@@ -8,9 +8,11 @@
 	<title>Status</title>
 </head>
 <body>
-	{% if check %}
+	
 	<div class="container-fluid bg-dark">
-
+		<div id ="login" class="bg-dark">
+			<button onclick="location.href='{{url_for('index')}}'" class="btn btn-warning">Home</button>
+		</div>
 		<div class = "pagename text-center">
     <h1>Set Status</h1>
   </div>
@@ -19,7 +21,18 @@
     <div class="jumbotron">
 	
 	
-	<form action = "{{ url_for('index') }}" method = "post">
+	<form action = "{{ url_for('status') }}" method = "post">
+		<div class="form-group">
+		<label for="all">S Block Status: </label>
+		<select class="form-control" name="all">
+  		<option value="closed">Closed</option>
+  		{% if allval=="open"%}
+  		<option value="open" selected="selected">Open</option>
+  		{%else%}
+  		<option value="open">Open</option>
+  		{%endif%}
+		</select>
+	</div>
 		<div class="form-group">
 		<label for="tt">Table Tennis: </label>
 		<select class="form-control" name="tt">
@@ -90,7 +103,6 @@
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</center>
 	</form>
-	{% endif %}
 </div>
 </div>
 </div>

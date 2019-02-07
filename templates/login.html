@@ -9,15 +9,20 @@
 </head>
 <body>
 	<div class="container-fluid bg-dark">
-
+		<div id ="login" class="bg-dark">
+			<button onclick="location.href='{{url_for('index')}}'" class="btn btn-warning">Home</button>
+		</div>
 		<div class = "pagename text-center">
     <h1>Log in</h1>
+    {%if wrong%}
+    <p>Invalid Credentials
+    {%endif%}
   </div>
 		 <div class = "offset-md-4 col-md-4">
     
     <div class="jumbotron">
 		
-	<form action = "{{ url_for('admin') }}" method = "post" >
+	<form action = "{{ url_for('login') }}" method = "post" >
 		<div class = "form-group">
 			<center>
 		<label for="username">Username:&nbsp&nbsp</label>

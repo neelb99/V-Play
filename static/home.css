@@ -26,7 +26,7 @@ body,html{
 }
 
 #status{
-
+    margin-top:30px;
 	width:100vw;
 	max-width: 100%;
 	height: auto;
@@ -84,10 +84,17 @@ body,html{
 	text-decoration: none;
 }
 
+.btn{
+    margin:7px;
+}
 
+.btn-info{
+    color:white;
+}
 
 #login{
-	margin: 20px; 
+	margin-right:20px;
+	padding-top:20px;
 	text-align: right;
 	text-decoration: none;
 	color: white;

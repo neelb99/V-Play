@@ -11,102 +11,22 @@
 	<div class="container-fluid">
 		<div id="welcome" class="text-center bg-dark">
 			<div id ="login">
-			<a href={{url_for('login')}}><button class="btn btn-warning"><a href={{url_for('login')}}>Login</a></button></a>
+			{%if isadmin %}
+			<button onclick="location.href='{{url_for('admin')}}'" class="btn btn-warning">Update Status</button>
+			<button onclick="location.href='{{url_for('logout')}}'" class="btn btn-warning">Sign Out</button>
+			{%else%}
+			<button onclick="location.href='{{url_for('login')}}'" class="btn btn-warning">Login</button>
+			{%endif%}
 			</div>
 			<div id="stuff">
-			<h1>Welcome to V-Play</h1>
-			<br>
-			<p>V-Play is a portal designed to give you updates regarding the status of the various activities in S block. Using this portal you can check whether the various activities are full or if there are vacancies available.</p>
-			<br>
-			<a href="#status"><button class="btn btn-info"><a href="#status">Check Status</a></button></a>
+				<h1>Welcome to V-Play</h1>
 				<br>
+				<p>V-Play is a portal designed to give you updates regarding the status of the various activities in S block. Using this portal you can check whether the various activities are full or if there are vacancies available.</p>
+				<br>
+				<button onclick="location.href='{{url_for('status')}}'" class="btn btn-info">Check Status</button>
+			
 		</div>
 	</div>
-		<br>
-		<br>
-		<div id="status" class="bg-dark">
-			<h1 class="text-center">Activities:</h1>
-			<br>
-			<div class="homecards">
-			<div class="card-deck">
-			{% if ttval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/73/73051.svg" alt="About Us Icon">
-      		<div class="card-body text-center">
-    			<h2><h5 class="card-title">Table Tennis</h5></h2>
-    			<p class="card-title">{{ttval}}</p>
-  			</div>
-			</div>
-			{% if psval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/65/65222.svg" alt="About Us Icon">
-      <div class="card-body text-center">
-    			<h5 class="card-title">Playstation</h5>
-    			<p class="card-title">{{psval}}</p>
-  			</div>
-			</div>
-
-			{% if carromval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/103/103255.svg" alt="About Us Icon">
-      <div class="card-body text-center">
-    			<h5 class="card-title">Carrom</h5>
-    			<p class="card-title">{{carromval}}</p>
-  			</div>
-			</div>
-</div>
-		<div class="card-deck">
-			{% if chessval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/1384/1384313.svg" alt="About Us Icon">
-      <div class="card-body text-center">
-    			<h5 class="card-title">Chess</h5>
-    			<p class="card-title">{{chessval}}</p>
-  			</div>
-			</div>
-		
-		
-			
-
-			{% if PCval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/11/11296.svg" alt="About Us Icon">
-      <div class="card-body text-center">
-    			<h5 class="card-title">PC</h5>
-    			<p class="card-title">{{PCval}}</p>
-  			</div>
-			</div>
-
-			{% if poolval == "Available"%}
-			<div class="card activitycard bg-success" >
-			{% else%}
-			<div class="card activitycard bg-danger" >
-			{% endif%}
-  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/39/39733.svg" alt="About Us Icon">
-      <div class="card-body text-center">
-    			<h5 class="card-title">Pool</h5>
-    			<p class="card-title">{{poolval}}</p>
-  			</div>
-  		</div>
-			</div>
-			</div>
-				<p class="text-center">Last updated: {{time}}</p>
-		</div>
 	</div>
 </body>
 </html>

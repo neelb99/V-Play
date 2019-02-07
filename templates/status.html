@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/letters-and-numbers-1/32/lowercase_letter_v_blue-512.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
+	<title>Status</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id ="login" class="bg-dark">
+			<button onclick="location.href='{{url_for('index')}}'" class="btn btn-warning">Home</button>
+			{%if isadmin %}
+			<button onclick="location.href='{{url_for('admin')}}'" class="btn btn-warning">Update Status</button>
+			<button onclick="location.href='{{url_for('logout')}}'" class="btn btn-warning">Sign Out</button>
+			{%else%}
+			<button onclick="location.href='{{url_for('login')}}'" class="btn btn-warning">Login</button>
+			{%endif%}
+			</div>
+		<div id="status" class="bg-dark">
+			<h1 class="text-center">Activities:</h1>
+			<br>
+			<div class="homecards">
+			<div class="card-deck">
+			{% if ttval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/73/73051.svg" alt="About Us Icon">
+      		<div class="card-body text-center">
+    			<h2><h5 class="card-title">Table Tennis</h5></h2>
+    			<p class="card-title">{{ttval}}</p>
+  			</div>
+			</div>
+			{% if psval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/65/65222.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Playstation</h5>
+    			<p class="card-title">{{psval}}</p>
+  			</div>
+			</div>
+
+			{% if carromval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/103/103255.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Carrom</h5>
+    			<p class="card-title">{{carromval}}</p>
+  			</div>
+			</div>
+</div>
+		<div class="card-deck">
+			{% if chessval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/1384/1384313.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Chess</h5>
+    			<p class="card-title">{{chessval}}</p>
+  			</div>
+			</div>
+		
+		
+			
+
+			{% if PCval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/11/11296.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">PC</h5>
+    			<p class="card-title">{{PCval}}</p>
+  			</div>
+			</div>
+
+			{% if poolval == "Available"%}
+			<div class="card activitycard bg-success" >
+			{% else%}
+			<div class="card activitycard bg-danger" >
+			{% endif%}
+  			<img class="card-img-top" src="https://image.flaticon.com/icons/svg/39/39733.svg" alt="About Us Icon">
+      <div class="card-body text-center">
+    			<h5 class="card-title">Pool</h5>
+    			<p class="card-title">{{poolval}}</p>
+  			</div>
+  		</div>
+			</div>
+			</div>
+				<p class="text-center">Last updated: {{time}}</p>
+		</div>
+	</div>
+</body>
