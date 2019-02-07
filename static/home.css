@@ -95,13 +95,14 @@ body,html{
 #login{
 	margin-right:20px;
 	padding-top:20px;
+	margin-bottom:20px;
 	text-align: right;
 	text-decoration: none;
 	color: white;
 }
 
 .homecards{
-  margin-top:30px;
+  margin-top:20px;
   padding-bottom:30px;
   padding-top:30px;
   margin-left:20px;
