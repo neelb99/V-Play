@@ -155,6 +155,34 @@ def new():
 	else:
 		return redirect('/')
 
+@app.route("/monitor")
+def monitor():
+	if 'admin' in session:
+		return render_template('monitor.html', isadmin=True)
+	else:
+		return redirect('/login')
+
+@app.route("/check",methods=["GET","POST"])
+def check():
+    if 'admin' in session:
+        if request.method == "GET":
+            return redirect('/monitor')
+        else:
+            date = request.form.get("date")
+            month = request.form.get("month")
+            year = request.form.get("year")
+            activity = request.form.get("activity")
+            if activity == "all":
+                query = db.execute("select * from users where date = :date and month = :month and year = :year order by id DESC",
+                                   {"date":date,"month":month,"year":year}).fetchall()
+                return render_template('check.html',query=query)
+            else:
+                query = db.execute("select * from users where date = :date and month = :month and year = :year and activity = :activity order by id DESC",
+                    {"date": date, "month": month, "year": year,"activity":activity}).fetchall()
+                return render_template('check.html', query=query)
+    else:
+        return redirect('/login')
+
 if __name__ == "__main__":
 	app.run()
 

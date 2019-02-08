@@ -63,6 +63,12 @@ body,html{
 	color: white;
 }
 
+#check{
+	margin:auto;
+	font-size: 18px;
+	color: white;
+}
+
 .btn-warning a{
 	color: black;
 }

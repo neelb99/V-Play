@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/letters-and-numbers-1/32/lowercase_letter_v_blue-512.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href={{url_for('static', filename='home.css')}}>
+	<title>New Entry</title>
+</head>
+<body>
+	<div class="container-fluid">
+			<div id ="login" class="bg-dark">
+			<button onclick="location.href='{{url_for('index')}}'" class="btn btn-warning">Home</button>
+			<button onclick="location.href='{{url_for('logout')}}'" class="btn btn-warning">Sign Out</button>
+		</div>
+			<div id="check">
+				<center>
+				<h2>Details</h2>
+				<br>
+			</center>
+				<br>
+				<ul>
+					{%if query%}
+				{%for user in query%}
+				<li>{{user.name}} used {{user.activity}} on {{user.date}}-{{user.month}}-{{user.year}} from {{user.starttime}} to {{user.endtime}}</li>
+				<br>
+				{%endfor%}
+				</ul>
+				<center>
+				{%else%}
+				<center>
+				<p>No data for selected criteria</p>
+				<br>
+				{%endif%}
+			
+			
+				<button onclick="location.href='{{url_for('monitor')}}'" class="btn btn-info">Go back</button>
+			</center>
+		</div>
+	</div>
+</body>
+</html>
