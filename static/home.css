@@ -130,3 +130,6 @@ body,html{
 	margin-bottom:20px !important;
 }
 
+.row:before, .row:after{
+	display: inline-block;
+}
