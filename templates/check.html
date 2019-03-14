@@ -19,10 +19,10 @@
 				<br>
 			</center>
 				<br>
-				<ul class="list-group">
+				<ul>
 					{%if query%}
 				{%for user in query%}
-				<li class="list-group-item">{{user.name}} used {{user.activity}} on {{user.date}}-{{user.month}}-{{user.year}} from {{user.starttime}} to {{user.endtime}}</li>
+				<li>{{user.name}} used {{user.activity}} on {{user.date}}-{{user.month}}-{{user.year}} from {{user.starttime}} to {{user.endtime}}</li>
 				<br>
 				{%endfor%}
 				</ul>
